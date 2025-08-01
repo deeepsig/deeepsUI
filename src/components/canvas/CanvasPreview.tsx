@@ -11,7 +11,7 @@ export default function CanvasPreview({
   return (
     <div className="w-full h-[300px] bg-[#fff] border border-[#f1f1f1] rounded-2xl overflow-hidden flex flex-col">
       {/* Header with title and expand icon */}
-      <div className="flex justify-between items-center p-4 border-b bg-[#FaFcFe] border-[#f1f1f1]">
+      <div className="flex justify-between items-center p-4 border-b bg-[#ffffff] border-[#f1f1f1]">
         <h3 className="font-inter text-[#2a2c2e] font-medium">{title}</h3>
         <ExpandButton onClick={() => console.log('Expand clicked')} />
       </div>
