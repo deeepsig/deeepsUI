@@ -1,4 +1,5 @@
 import { useCanvas } from '../../contexts/CanvasContext';
+import CloseButton from '../buttons/CloseButton';
 
 interface CanvasPanelProps {
   title?: string;
@@ -18,21 +19,7 @@ export default function CanvasPanel({
           <h3 className="font-inter text-[#2a2c2e] font-medium text-lg">
             {title}
           </h3>
-          <button
-            onClick={collapseCanvas}
-            className="p-2 rounded-md text-slate-500 hover:text-slate-700 hover:bg-slate-50 transition-all duration-200"
-          >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path d="M18 6L6 18M6 6l12 12" />
-            </svg>
-          </button>
+          <CloseButton onClick={collapseCanvas} />
         </div>
         {/* Main content area - expanded version */}
         <div className="flex-1 p-6 bg-[#fff] relative font-inter">
