@@ -2,7 +2,7 @@ import CanvasInteraction from './examples/CanvasInteraction';
 
 function App() {
   return (
-    <div className="flex justify-center items-center min-h-screen w-full">
+    <div className="min-h-screen py-[25vh]">
       <CanvasInteraction />
     </div>
   );

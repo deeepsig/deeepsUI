@@ -11,7 +11,7 @@ export default function ChatBubble({
     <div
       className={`inline-block py-2 px-4 rounded-2xl ${!isEditing ? 'bg-[#F4F4F4] border border-[#f1f1f1]' : ''}`}
     >
-      <p className="text-base font-inter text-[#2a2c2e]">{text}</p>
+      <p className="font-inter text-[#2a2c2e]">{text}</p>
     </div>
   );
 }
