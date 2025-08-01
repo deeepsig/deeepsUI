@@ -11,7 +11,7 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({
 }) => {
   return (
     <div
-      className={`inline-block py-2 px-4 rounded-2xl ${!isEditing ? 'bg-[#E5E7E9]' : ''}`}
+      className={`inline-block py-2 px-4 rounded-2xl ${!isEditing ? 'bg-[#F4F4F4] border border-[#f1f1f1]' : ''}`}
     >
       <code className="text-base font-inter text-[#2a2c2e]">{text}</code>
     </div>
