@@ -13,7 +13,7 @@ export default function CanvasPanel({
   return (
     <div className="h-full">
       {/* Main canvas container - larger version of CanvasPreview */}
-      <div className="w-full h-full bg-[#fff] border border-[#f1f1f1] overflow-hidden flex flex-col">
+      <div className="w-full h-full bg-[#fff] border border-[#ebecec] overflow-hidden flex flex-col shadow-[-4px_0_24px_-4px_rgba(0,0,0,0.08)]">
         {/* Header with title and close button */}
         <div className="flex justify-between items-center p-4 border-b bg-[#ffffff] border-[#f1f1f1]">
           <h3 className="font-inter text-[#2a2c2e] font-medium text-lg">
@@ -22,30 +22,7 @@ export default function CanvasPanel({
           <CloseButton onClick={collapseCanvas} />
         </div>
         {/* Main content area - expanded version */}
-        <div className="flex-1 p-6 bg-[#fff] relative font-inter">
-          {/* Expanded canvas content goes here */}
-          <div className="h-full flex items-center justify-center text-gray-400">
-            Expanded canvas content area
-          </div>
-          {/* Work in progress indicator with animated circle */}
-          <div className="absolute bottom-6 right-6 flex items-center gap-2 text-[#cdcecf] text-sm font-normal">
-            <svg
-              width="8"
-              height="8"
-              viewBox="0 0 8 8"
-              className="animate-pulse"
-            >
-              <circle
-                cx="4"
-                cy="4"
-                r="3"
-                fill="#cdcecf"
-                className="animate-pulse"
-              />
-            </svg>
-            work in progress
-          </div>
-        </div>
+        <div className="flex-1 p-6 bg-[#fff] relative font-inter"></div>
       </div>
     </div>
   );

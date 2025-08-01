@@ -1,5 +1,6 @@
 import { useCanvas } from '../../contexts/CanvasContext';
 import ExpandButton from '../buttons/ExpandButton';
+import Circle from '../icons/Circle';
 
 interface CanvasPreviewProps {
   title?: string;
@@ -25,15 +26,7 @@ export default function CanvasPreview({
 
         {/* Work in progress indicator with animated circle */}
         <div className="absolute bottom-4 right-4 flex items-center gap-2 text-[#cdcecf] text-sm font-normal">
-          <svg width="8" height="8" viewBox="0 0 8 8" className="animate-pulse">
-            <circle
-              cx="4"
-              cy="4"
-              r="3"
-              fill="#cdcecf"
-              className="animate-pulse"
-            />
-          </svg>
+          <Circle size={8} fill="#cdcecf" className="animate-pulse" />
           work in progress
         </div>
       </div>

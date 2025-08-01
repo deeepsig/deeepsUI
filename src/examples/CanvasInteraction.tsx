@@ -19,12 +19,12 @@ function CanvasLayout() {
     return (
       <div className="fixed inset-0 bg-white z-50 flex">
         {/* Left chat panel - 50% width */}
-        <div className="w-1/2 flex-shrink-0 overflow-y-auto py-[25vh] bg-white">
+        <div className="w-1/3 flex-shrink-0 overflow-y-auto py-[25vh] bg-white">
           {chatContent}
         </div>
 
         {/* Right canvas panel - 50% width */}
-        <div className="w-1/2 flex-shrink-0">
+        <div className="w-2/3 flex-shrink-0">
           <CanvasPanel />
         </div>
       </div>
