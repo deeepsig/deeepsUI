@@ -1,24 +1,27 @@
+import { useCanvas } from '../../contexts/CanvasContext';
 import ExpandButton from '../buttons/ExpandButton';
 
-interface CanvasProps {
+interface CanvasPreviewProps {
   title?: string;
-  isFocussed?: boolean;
 }
 
 export default function CanvasPreview({
   title = 'Brand Design Mood Board',
-}: CanvasProps) {
+}: CanvasPreviewProps) {
+  const { expandCanvas } = useCanvas();
+
+  // Only render the preview card - expanded view is handled by CanvasInteraction
   return (
     <div className="w-full h-[300px] bg-[#fff] border border-[#f1f1f1] rounded-2xl overflow-hidden flex flex-col">
       {/* Header with title and expand icon */}
       <div className="flex justify-between items-center p-4 border-b bg-[#ffffff] border-[#f1f1f1]">
         <h3 className="font-inter text-[#2a2c2e] font-medium">{title}</h3>
-        <ExpandButton onClick={() => console.log('Expand clicked')} />
+        <ExpandButton onClick={expandCanvas} />
       </div>
 
-      {/* Main content area - expandable empty space */}
+      {/* Main content area */}
       <div className="flex-1 p-4 bg-[#fff] relative font-inter">
-        {/* This area can be expanded with content */}
+        {/* Preview content goes here */}
 
         {/* Work in progress indicator with animated circle */}
         <div className="absolute bottom-4 right-4 flex items-center gap-2 text-[#cdcecf] text-sm font-normal">
