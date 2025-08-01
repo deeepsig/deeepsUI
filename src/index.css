@@ -13,3 +13,13 @@
 @theme {
   --font-inter: 'Inter', sans-serif;
 }
+
+::selection {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+::-moz-selection {
+  background-color: #e5e7eb;
+  color: #374151;
+}
