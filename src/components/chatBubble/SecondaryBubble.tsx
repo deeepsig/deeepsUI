@@ -1,10 +1,12 @@
+import { chatData } from '../../data/Data';
+
 interface SecondaryBubbleProps {
   text?: string;
   isEditing?: boolean;
 }
 
 export default function SecondaryBubble({
-  text = 'find me some good brand design inspirations',
+  text = chatData.secondaryBubbleText,
   isEditing = false,
 }: SecondaryBubbleProps) {
   return (
