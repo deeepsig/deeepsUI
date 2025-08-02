@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import SecondaryBubble from '../components/chatBubble/SecondaryBubble';
 import ChatResponse from '../components/chatResponse/ChatResponse';
 import CanvasPanel from '../components/canvas/CanvasPanel';
@@ -5,12 +6,26 @@ import { CanvasProvider, useCanvas } from '../contexts/CanvasContext';
 
 function CanvasLayout() {
   const { isCanvasExpanded } = useCanvas();
+  const [showSecondaryBubble, setShowSecondaryBubble] = useState(false);
+  const [showChatResponse, setShowChatResponse] = useState(false);
+
+  useEffect(() => {
+    // Show SecondaryBubble immediately
+    setShowSecondaryBubble(true);
+
+    // Show ChatResponse after a delay
+    const timer = setTimeout(() => {
+      setShowChatResponse(true);
+    }, 200); // 200ms delay
+
+    return () => clearTimeout(timer);
+  }, []);
 
   // Shared chat content
   const chatContent = (
     <div className="flex flex-col items-end w-full max-w-[576px] mx-auto px-4 space-y-6">
-      <SecondaryBubble />
-      <ChatResponse />
+      {showSecondaryBubble && <SecondaryBubble />}
+      {showChatResponse && <ChatResponse />}
     </div>
   );
 
