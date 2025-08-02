@@ -20,7 +20,7 @@ function CanvasLayout() {
       <div
         className={`transition-opacity duration-300 ${
           isCanvasExpanded
-            ? 'fixed left-0 top-0 w-1/2 h-full overflow-y-auto py-[25vh] bg-white z-40 opacity-80'
+            ? 'fixed left-0 top-0 w-1/3 h-full overflow-y-auto py-[25vh] bg-white z-40 opacity-80'
             : 'max-w-[576px] mx-auto opacity-100'
         }`}
       >
@@ -29,7 +29,7 @@ function CanvasLayout() {
 
       {/* Canvas panel - slides in from right */}
       <div
-        className={`fixed top-0 right-0 w-1/2 h-full z-50 transition-transform duration-300 ${
+        className={`fixed top-0 right-0 w-2/3 h-full z-50 transition-transform duration-300 ${
           isCanvasExpanded ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
