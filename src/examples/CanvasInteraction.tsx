@@ -3,6 +3,7 @@ import SecondaryBubble from '../components/chatBubble/SecondaryBubble';
 import ChatResponse from '../components/chatResponse/ChatResponse';
 import CanvasPanel from '../components/canvas/CanvasPanel';
 import { CanvasProvider, useCanvas } from '../contexts/CanvasContext';
+import { animationConfig } from '../data/Data';
 
 function CanvasLayout() {
   const { isCanvasExpanded } = useCanvas();
@@ -10,18 +11,15 @@ function CanvasLayout() {
   const [showChatResponse, setShowChatResponse] = useState(false);
 
   useEffect(() => {
-    // Show SecondaryBubble immediately
     setShowSecondaryBubble(true);
 
-    // Show ChatResponse after a delay
     const timer = setTimeout(() => {
       setShowChatResponse(true);
-    }, 200); // 200ms delay
+    }, animationConfig.chatResponseDelay);
 
     return () => clearTimeout(timer);
   }, []);
 
-  // Shared chat content
   const chatContent = (
     <div className="flex flex-col items-end w-full max-w-[576px] mx-auto px-4 space-y-6">
       {showSecondaryBubble && <SecondaryBubble />}
@@ -31,7 +29,6 @@ function CanvasLayout() {
 
   return (
     <div className="relative">
-      {/* Chat content - dims when canvas expands */}
       <div
         className={`transition-opacity duration-300 ${
           isCanvasExpanded
@@ -42,7 +39,6 @@ function CanvasLayout() {
         {chatContent}
       </div>
 
-      {/* Canvas panel - slides in from right */}
       <div
         className={`fixed top-0 right-0 w-2/3 h-full z-50 transition-transform duration-300 ${
           isCanvasExpanded ? 'translate-x-0' : 'translate-x-full'
